@@ -8,6 +8,7 @@ from . import views
 app_name = 'accounts'
 
 urlpatterns = [
-   	url(r'^reset_pass/$', views.ResetPassAjax.as_view()),
-	url(r'^send_email/$', views.SendEmail.as_view()),
+        url(r'^reset_pass/$', views.ResetPassAjax.as_view()),
+        url(r'^send_email/$', views.SendEmail.as_view()),
+        url(r'^send_new_email/$', views.SendNewEmail.as_view()),
 ]

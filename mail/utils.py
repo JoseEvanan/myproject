@@ -89,9 +89,17 @@ def email_report_question(host, user, email, subject='', description=''):
     else:
         description = description
     text = ""
+    css_str01 = "{font-weight: 600; font-size: 1.4rem;}"
+    css_str02 = "{font-weight: 600;}"
+    css_str03 = "{color: #c3d100; font-weight: 600;}"
     html = """\
     <html>
       <head>
+          <style rel="stylesheet" type="text/css">
+              .outer_span {}
+              .inner_span {}
+              .footer_span {}
+          </style>
         
       </head>
       <body background: #D6D6D5;">
@@ -99,7 +107,7 @@ def email_report_question(host, user, email, subject='', description=''):
               <img style="width: 170px; height: 70px " src="http://kiwilex.com/static/img/logo.png"/>
           </div>
           <div style="background: white; padding: 2% 4% 2%">
-            <p style="font-family: 'ClanPro-Book','HelveticaNeue-Light','Helvetica Neue Light',Helvetica,Arial,sans-serif; color: #717172; font-size: 16px; line-height: 28px">{}<p>
+            <p class="text_format" style='font-family: "ClanPro-Book","HelveticaNeue-Light","Helvetica Neue Light",Helvetica,Arial,sans-serif; color: #717172; font-size: 16px; line-height: 28px'>{}<p>
           </div>
           <div style="background: #F1F1F1; padding: 1% 4% 1%">
               
@@ -109,7 +117,7 @@ def email_report_question(host, user, email, subject='', description=''):
           </div>
       </body>
     </html>
-    """.format(description)
+    """.format(css_str01, css_str02, css_str03, description)
     try:
         mensaje = MIMEMultipart('alternative')
         text_text = MIMEText(text, 'plain')

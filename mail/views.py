@@ -18,7 +18,9 @@ class ResetPassAjax(generic.View):
         
         is_send = send_confirmation(host, email_to, name, activation_key,
                                     subject, description)
-
+#	file = open('text.txt', 'w')
+#	file.write(host)
+#	file.close()
         return JsonResponse({'status': is_send})
 
 
@@ -51,4 +53,19 @@ class SendEmail(generic.View):
                 description = "<span style='font-weight: 600; font-size: 1.4rem'>" + exam.upper() + "</span><br><span style='font-weight: 600'>PREGUNTA N° " + num_question + "</span><br><br>ERRORES ENCONTRADOS:<br>" + str_chosen_options + "<br>TU COMENTARIO:<br>" + comentary + "<br><br>"  + user.upper() + ", ¡GRACIAS POR REPORTAR ESTA PREGUNTA!<br>Se ha solucionado el inconveniente que tuviste. Con tu ayuda seguiremos creciendo.<br><br><hr><span style='color: #c3d100; font-weight: 600'>TEAM KIWILEX</span>"
         is_send = email_report_question(host, user, email,  subject, description)
         return JsonResponse({'status': is_send})
+
+
+class SendNewEmail(generic.View):
+    """ Send any type of email to user """
+
+    def get(self, request):
+        """ GET Method """
+        host = request.GET['HTTP_HOST']
+        user = request.GET['user']
+        email = request.GET['email']
+        subject = request.GET['subject']
+        description = request.GET['description']
+        is_send = email_report_question(host, user, email, subject, description)
+        return JsonResponse({'status': is_send})
+
 
