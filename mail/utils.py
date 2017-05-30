@@ -47,8 +47,8 @@ def send_confirmation(host, email_to, name, activation_key, subject='', descript
           <div style="background: #F1F1F1; padding: 1% 4% 1%">
               
                 <a style="margin-right: 1%" href="https://play.google.com/store/apps/details?id=com.iim.kiwilex"><img style="cursor: pointer; width: 5rem; height: 5rem" src="https://4.bp.blogspot.com/-RVKEQjOvyF8/WG0nsvErouI/AAAAAAAADtA/AUx5gTp7JTkJvfjucKKQdhYPUHv1hPPcgCLcB/s1600/google_play_logo.png"/></a>
-                <a style="margin-left: 1%" href="https://www.facebook.com/kiwilex/"><img style="cursor: pointer; width: 5rem; height: 5rem" src="https://images.seeklogo.net/2016/09/facebook-icon-preview-1.png"/>
                 <a style="margin-right: 1%" href="https://itunes.apple.com/pe/app/kiwilex/id1239610888"><img style="cursor: pointer; width: 4rem; height: 4rem; margin: 1% 0% 1% 1%;" src="https://meraki.cisco.com/blog/wp-content/uploads/2012/08/App-Store-Icon1.png"/></a>
+                <a style="margin-left: 1%" href="https://www.facebook.com/kiwilex/"><img style="cursor: pointer; width: 5rem; height: 5rem" src="https://images.seeklogo.net/2016/09/facebook-icon-preview-1.png"/>
           </div>
       </body>
     </html>
@@ -112,8 +112,8 @@ def email_report_question(host, user, email, subject='', description=''):
           <div style="background: #F1F1F1; padding: 1% 4% 1%">
               
                 <a style="margin-right: 1%" href="https://play.google.com/store/apps/details?id=com.iim.kiwilex"><img style="cursor: pointer; width: 5rem; height: 5rem" src="https://4.bp.blogspot.com/-RVKEQjOvyF8/WG0nsvErouI/AAAAAAAADtA/AUx5gTp7JTkJvfjucKKQdhYPUHv1hPPcgCLcB/s1600/google_play_logo.png"/></a>
-                <a style="margin-left: 1%" href="https://www.facebook.com/kiwilex/"><img style="cursor: pointer; width: 5rem; height: 5rem" src="https://images.seeklogo.net/2016/09/facebook-icon-preview-1.png"/>
                 <a style="margin-right: 1%" href="https://itunes.apple.com/pe/app/kiwilex/id1239610888"><img style="cursor: pointer; width: 4rem; height: 4rem; margin: 1% 0% 1% 1%;" src="https://meraki.cisco.com/blog/wp-content/uploads/2012/08/App-Store-Icon1.png"/></a>
+                <a style="margin-left: 1%" href="https://www.facebook.com/kiwilex/"><img style="cursor: pointer; width: 5rem; height: 5rem" src="https://images.seeklogo.net/2016/09/facebook-icon-preview-1.png"/>
           </div>
       </body>
     </html>
