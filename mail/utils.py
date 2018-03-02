@@ -4,6 +4,8 @@ import random
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
+from email.header import Header
+from email.utils import formataddr
 
 def send_confirmation(host, email_to, name, activation_key, subject='', description=''):
     """function send message
@@ -27,7 +29,7 @@ def send_confirmation(host, email_to, name, activation_key, subject='', descript
         description = """Para confirmar su registro de Kiwilex """
     else:
         description = description
-    text = """Bienvenido!
+    text = """Bienvenido update!
               Sr/a: {}  {} le solicitamos haga click en el siguiente enlace:
               http://{}/confirm/{}""".format(name,description, host, activation_key)
     html = """\
@@ -59,7 +61,8 @@ def send_confirmation(host, email_to, name, activation_key, subject='', descript
         text_html = MIMEText(html, 'html')
         mensaje.attach(text_text)
         mensaje.attach(text_html)
-        mensaje['From'] = "noreply@kiwilex.biz"
+        mensaje['From'] = formataddr((str(Header('TeamKiwilex', 'utf-8')), 'noreply@kiwilex.biz'))
+        #mensaje['From'] = "noreply@kiwilex.biz"
         mensaje['To'] = email_to
         mensaje['Subject'] = titulo
         server_smtp = smtplib.SMTP('smtp.office365.com', 587)
@@ -77,7 +80,7 @@ def send_confirmation(host, email_to, name, activation_key, subject='', descript
 
 
 
-def email_report_question(host, user, email, subject='', description=''):
+def email_report_question(host, email, subject='', description=''):
     if not host:
         return False
     if subject == '':
@@ -95,6 +98,10 @@ def email_report_question(host, user, email, subject='', description=''):
     html = """\
     <html>
       <head>
+          <!--link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"-->
+	  <style>
+	  @import url('https://fonts.googleapis.com/css?family=Pacifico');
+	  </style>
           <style rel="stylesheet" type="text/css">
               .outer_span {}
               .inner_span {}
@@ -107,7 +114,7 @@ def email_report_question(host, user, email, subject='', description=''):
               <img style="width: 170px; height: 70px " src="http://kiwilex.com/static/img/logo.png"/>
           </div>
           <div style="background: white; padding: 2% 4% 2%">
-            <p class="text_format" style='font-family: "ClanPro-Book","HelveticaNeue-Light","Helvetica Neue Light",Helvetica,Arial,sans-serif; color: #717172; font-size: 16px; line-height: 28px'>{}<p>
+            <p class="text_format" style="font-family: 'Pacifico', 'Verdana', sans-serif, cursive; color: #717172; font-size: 16px; line-height: 28px">{}<p>
           </div>
           <div style="background: #F1F1F1; padding: 1% 4% 1%">
               
